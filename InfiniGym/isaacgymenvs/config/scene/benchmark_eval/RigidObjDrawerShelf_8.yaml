@@ -1,0 +1,4 @@
+name: RigidObjDrawerShelf_8
+scene_list:
+- benchmark_eval/DrawerShelf/DrawerShelfSceneFactory_23
+num_tasks: 60

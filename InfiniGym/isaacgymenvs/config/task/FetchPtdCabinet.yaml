@@ -1,0 +1,72 @@
+# GA-Ptd-Cabinet
+name: FetchPtdCabinet
+prefix: Debug
+
+defaults:
+    - FetchPointCloudBase
+    - _self_
+
+
+viewer:
+  camPos: [-2.0, 1.5, 2.5]
+  camTar: [0, 0, 0.7]
+  enable: True
+
+
+# if given, will override the device setting in gym. 
+env:
+  numTasks: null
+  enableDebugVis: False
+
+  aggregateMode: 0
+  aggregateBody: 30
+  aggregateShape: 1000
+
+  armControlType: joint  # options are {joint, osc}
+  gripperControlType: velocity
+
+  # set to True if you use camera sensors in the environment
+  enableCameraSensors: True
+
+solution:
+  cuRobo:
+    ik_rot_th: 0.02
+    ik_pos_th: 0.002
+    ik_num_seed: 32
+    trjopt_num_seed: 16
+    graph_num_seed: 4
+    collision_activation_dist: 0.025
+
+  mppi:
+    num_iks: 25
+    horizon: 40
+    num_rollouts: 50
+    q_noise_std: 0.08
+    max_step: 0.05
+    collision_steps: 10
+    transition_threshold: 0.04
+    self_coll_nn: 'SCN'
+    scene_coll_nn: 'CBN'
+    update_model_center: true
+    sample_waypoints: true
+
+  init_steps: 20
+  eval_steps: 600
+  gripper_steps: 90
+
+  num_grasp_steps: 30
+  num_fetch_steps: 30
+  control_freq: 1
+
+  max_grasp_pose: 200
+  video_freq: 6
+
+  pre_grasp_offset: 0.05
+  retract_offset: 0.05
+  grasp_overshoot_ratio: 1.05
+  move_offset_method: cartesian_linear
+  disable_grasp_obj_ik_collision: False
+
+  num_step_repeat_per_plan_dt: 2 # usually motion_interpolation_dt / sim_dt
+  num_osc_repeat: 12
+  num_cartesian_steps: 5

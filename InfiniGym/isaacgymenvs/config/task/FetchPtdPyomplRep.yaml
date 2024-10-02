@@ -1,0 +1,44 @@
+# GA-RRTConnect-Repx5
+name: FetchPtdPyomplRep
+prefix: Debug
+
+defaults:
+    - FetchPtdPyompl
+    - _self_
+
+
+scene_config_path: []
+
+
+viewer:
+  camPos: [-2.0, 1.5, 2.5]
+  camTar: [0, 0, 0.7]
+  enable: True
+
+
+# if given, will override the device setting in gym. 
+env:
+  numTasks: null
+  enableDebugVis: False
+
+  aggregateMode: 0
+  aggregateBody: 30
+  aggregateShape: 1000
+
+  armControlType: joint  # options are {joint, osc}
+  gripperControlType: velocity
+
+  # set to True if you use camera sensors in the environment
+  enableCameraSensors: True
+
+solution:
+  init_steps: 20
+  eval_steps: 600
+  gripper_steps: 90
+
+  max_grasp_pose: 200
+  video_freq: 12
+
+  update_motion_gen_collider_before_fetch: True
+
+  num_max_trials: 5

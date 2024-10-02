@@ -1,0 +1,31 @@
+# CGN-Mesh-Curobo-Repx5
+name: FetchMeshCuroboPtdCGNBetaRep
+prefix: Debug
+
+defaults:
+    - FetchMeshCuroboPtdCGNBeta
+    - _self_
+
+
+viewer:
+  camPos: [-2.0, 1.5, 2.5]
+  camTar: [0, 0, 0.7]
+  enable: True
+
+
+# if given, will override the device setting in gym. 
+env:
+  numTasks: null
+  enableDebugVis: False
+
+solution:
+  max_grasp_pose: 200
+  video_freq: 20
+  move_offset_method: cartesian_linear
+
+  direct_grasp: False
+  disable_grasp_obj_ik_collision: False
+  disable_grasp_obj_motion_gen: False
+
+  num_max_trials: 5
+

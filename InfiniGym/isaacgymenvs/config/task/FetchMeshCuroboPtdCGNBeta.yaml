@@ -1,0 +1,44 @@
+# CGN-Mesh-Curobo
+name: FetchMeshCuroboPtdCGNBeta
+prefix: Debug
+
+defaults:
+    - FetchMeshCurobo
+    - FetchPointCloudBase
+    - _self_
+
+
+viewer:
+  camPos: [-2.0, 1.5, 2.5]
+  camTar: [0, 0, 0.7]
+  enable: True
+
+
+# if given, will override the device setting in gym. 
+env:
+  numTasks: null
+  enableDebugVis: False
+
+solution:
+
+  cgn:
+    full_ptd: True
+    top_k: 10
+    confidence_th: 0.0
+    num_forward_passes: 4
+
+  cuRobo:
+    ik_rot_th: 0.02
+    ik_pos_th: 0.002
+    ik_num_seed: 32
+    trjopt_num_seed: 16
+    graph_num_seed: 4
+    motion_gen_timeout: 20
+    motion_gen_max_attempts: 10
+
+  move_offset_method: cartesian_linear
+  video_freq: 8
+
+  direct_grasp: False
+  disable_grasp_obj_ik_collision: True
+  disable_grasp_obj_motion_gen: True

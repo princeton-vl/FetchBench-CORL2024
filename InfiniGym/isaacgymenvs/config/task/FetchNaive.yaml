@@ -1,0 +1,32 @@
+# used to create the object
+name: FetchNaive
+prefix: Debug
+
+defaults:
+    - FetchBase
+    - _self_
+
+viewer:
+  camPos: [-2.0, 1.5, 2.5]
+  camTar: [0, 0, 0.7]
+  enable: True
+
+
+# if given, will override the device setting in gym. 
+env:
+  numTasks: null
+
+  aggregateMode: 0
+  aggregateBody: 30
+  aggregateShape: 1000
+
+  armControlType: joint  # options are {joint, osc}
+  gripperControlType: position
+
+  # set to True if you use camera sensors in the environment
+  enableCameraSensors: False
+
+solution:
+  init_steps: 10
+  eval_steps: 600
+  video_freq: 5

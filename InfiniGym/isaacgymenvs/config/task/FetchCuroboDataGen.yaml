@@ -1,0 +1,88 @@
+# used to create the object
+name: FetchCuroboDataGen
+prefix: Debug
+
+defaults:
+    - FetchPointCloudBase
+    - FetchMeshCurobo
+    - _self_
+
+
+scene_config_path: []
+max_tasks: 30
+
+path: /home/beining/Desktop/IsaacGym/Task/benchmark_eval
+category: Desk
+num_batch: 1
+batch_idx: 0
+data_path: '../Trajs/train'
+
+
+viewer:
+  camPos: [-2.0, 1.5, 2.5]
+  camTar: [0, 0, 0.7]
+  enable: True
+
+# if given, will override the device setting in gym. 
+env:
+  numTasks: null
+  enableDebugVis: False
+
+  aggregateMode: 0
+  aggregateBody: 30
+  aggregateShape: 1000
+
+  armControlType: joint  # options are {joint, osc}
+  gripperControlType: velocity
+
+  # set to True if you use camera sensors in the environment
+  enableCameraSensors: True
+
+  cam:
+    width: 320
+    height: 240
+
+solution:
+  cuRobo:
+    ik_rot_th: 0.02
+    ik_pos_th: 0.002
+    ik_num_seed: 32
+    trjopt_num_seed: 16
+    graph_num_seed: 4
+    collision_activation_dist: 0.025
+    motion_interpolation_dt: 0.01
+    motion_interpolation_steps: 5000
+    motion_gen_timeout: 40
+    motion_gen_max_attempts: 20
+    motion_trajopt_steps: 40
+
+  move_offset_method: cartesian_linear
+
+  randomize_init_state: true
+
+  direct_grasp: True
+  pre_grasp_offset: 0.04
+  retract_offset: 0.0
+  grasp_overshoot_ratio: 1.05
+  disable_grasp_obj_ik_collision: False
+  disable_grasp_obj_motion_gen: False
+
+  log_mode: trajectory
+  log_scene_ptd: True
+  log_cam_ptd: False
+  log_cam_render: False
+  log_state: True
+
+  log_scene_pts: 16384
+  log_goal_pts: 2048
+  log_robot_pts: 4096
+
+  log_ptd_downscale: 1
+  log_pts_range: 1.2
+  log_traj_min_delta_skip: 0.05
+  log_traj_frame_skip: 6
+  num_max_trajs: 1
+
+
+
+

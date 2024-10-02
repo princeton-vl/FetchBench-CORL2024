@@ -1,0 +1,81 @@
+# GA-Ptd-Curobo
+name: FetchPtdCurobo
+prefix: Debug
+
+defaults:
+    - FetchPointCloudBase
+    - _self_
+
+
+viewer:
+  camPos: [-2.0, 1.5, 2.5]
+  camTar: [0, 0, 0.7]
+  enable: True
+
+
+# if given, will override the device setting in gym. 
+env:
+  numTasks: null
+  enableDebugVis: False
+
+  aggregateMode: 0
+  aggregateBody: 30
+  aggregateShape: 1000
+
+  armControlType: joint  # options are {joint, osc}
+  gripperControlType: velocity
+
+  # set to True if you use camera sensors in the environment
+  enableCameraSensors: True
+
+solution:
+  cuRobo:
+    ik_rot_th: 0.02
+    ik_pos_th: 0.002
+    ik_num_seed: 32
+    trjopt_num_seed: 16
+    graph_num_seed: 4
+    collision_activation_dist: 0.025
+    motion_interpolation_dt: 0.01
+    motion_interpolation_steps: 5000
+    motion_gen_timeout: 60
+    motion_gen_max_attempts: 100
+    motion_trajopt_steps: 40
+
+    scene_voxel_size: 0.005
+    goal_obj_voxel_size: 0.005
+
+    velocity_scale: 0.1
+    acceleration_scale: 0.1
+
+    enable_graph: True
+    enable_opt: True
+
+    attach_object_z_offset: 0.007
+    surface_sphere_radius: 0.001
+
+  grasp_label:
+    gripper_type: cvx
+    use_flex_label: False
+    use_isaac_force_label: True
+    use_isaac_success_label: False
+
+  init_steps: 20
+  eval_steps: 600
+  gripper_steps: 90
+
+  max_grasp_pose: 200
+  video_freq: 6
+
+  pre_grasp_offset: 0.04
+  retract_offset: 0.02
+  grasp_overshoot_ratio: 1.05
+  move_offset_method: cartesian_linear
+  disable_grasp_obj_ik_collision: False
+  disable_grasp_obj_motion_gen: False
+  update_motion_gen_collider_before_fetch: True
+  attach_goal_obj: True
+
+  num_step_repeat_per_plan_dt: 2 # usually motion_interpolation_dt / sim_dt
+  num_osc_repeat: 12
+  num_cartesian_steps: 5

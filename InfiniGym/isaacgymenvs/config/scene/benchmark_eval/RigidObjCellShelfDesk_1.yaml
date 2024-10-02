@@ -1,0 +1,4 @@
+name: RigidObjCellShelfDesk_1
+scene_list:
+- benchmark_eval/CellShelfDesk/CellShelfDeskSceneFactory_45
+num_tasks: 60

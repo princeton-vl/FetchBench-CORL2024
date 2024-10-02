@@ -1,0 +1,4 @@
+name: RigidObjLargeShelfDesk_1
+scene_list:
+- benchmark_eval/LargeShelfDesk/LargeShelfDeskSceneFactory_17
+num_tasks: 60

@@ -1,0 +1,4 @@
+name: RigidObjDesk_1
+scene_list:
+- benchmark_eval/Desk/DeskSceneFactory_25
+num_tasks: 60

@@ -1,0 +1,102 @@
+# used to create the object
+name: FetchBase
+prefix: Debug
+
+physics_engine: ${..physics_engine}
+experiment_name: ''
+
+viewer:
+  camPos: [-2.0, 1.5, 2.5]
+  camTar: [0, 0, 0.7]
+  enable: True
+
+eval:
+  z_threshold: 0.28
+  x_threshold: 0.15
+  e_threshold: 0.10
+  d_threshold: 0.12
+
+
+# if given, will override the device setting in gym. 
+env:
+  numEnvs: ${resolve_default:1, ${...num_envs}}
+  envSpacing: 2.5
+  episodeLength: 150
+  enableDebugVis: False
+
+  numObjs: 15
+  numTasks: null
+  randomGoalIndex: False
+
+  aggregateMode: 0
+  aggregateBody: 30
+  aggregateShape: 1000
+
+  actionScale: 1.5
+  oscControlRepeat: 12
+  armControlType: joint  # options are {joint, osc}
+  gripperControlType: velocity
+
+  # set to True if you use camera sensors in the environment
+  enableCameraSensors: True
+
+  robot:
+    type: franka_r3_cvx
+    friction: 1.0
+    contact_offset: 0.001
+    restitution: 0.0
+    add_damping: True
+    disable_self_collision: 0
+    gripper_force_damp_ratio: 1000
+    osc_gain: 400.
+    osc_null_damp: 5.
+    joint_gain: 1000.0
+    joint_damp: 50.0
+    armature: 0.005
+
+  scene:
+    buffer_ratio: 0.1
+    max_num_objs: 15
+    friction: 0.5
+    contact_offset: 0.001
+    restitution: 0.0
+
+  objects:
+    contact_offset: 0.0005
+    friction: 1.0
+    density: 150.0
+    restitution: 0.0
+    rolling_friction: 0.05
+    torsion_friction: 0.05
+    add_damping: True
+
+  cam:
+    num_cam: 2
+    width: 640
+    height: 480
+    hov: 70
+
+sim:
+  dt: 0.0166 # 1/60
+  substeps: 6
+  up_axis: "z"
+  use_gpu_pipeline: ${eq:${...pipeline},"gpu"}
+  gravity: [0.0, 0.0, -9.81]
+  physx:
+    num_threads: ${....num_threads}
+    solver_type: ${....solver_type}
+    use_gpu: ${contains:"cpu",${....sim_device}} # set to False to run on CPU
+    num_position_iterations: 12
+    num_velocity_iterations: 0
+    contact_offset: 0.001
+    rest_offset: 0.0
+    bounce_threshold_velocity: 0.2
+    max_depenetration_velocity: 1000.0
+    default_buffer_size_multiplier: 5.0
+    max_gpu_contact_pairs: 8388608 # 8*1024*1024
+    num_subscenes: ${....num_subscenes}
+    contact_collection: 1 # 0: CC_NEVER (don't collect contact info), 1: CC_LAST_SUBSTEP (collect only contacts on last substep), 2: CC_ALL_SUBSTEPS (broken - do not use!)
+
+task:
+  randomize: False
+  scene_config_path: []

@@ -1,0 +1,12 @@
+__pycache__
+*/__pycache__
+*.zip
+third_party
+imit_checkpoints
+InfiniGym/isaacgymenvs/logs
+InfiniGym/isaacgymenvs/runs
+InfiniGym/isaacgymenvs/videos
+InfiniGym/runs
+InfiniGym/logs
+InfiniGym/videos
+

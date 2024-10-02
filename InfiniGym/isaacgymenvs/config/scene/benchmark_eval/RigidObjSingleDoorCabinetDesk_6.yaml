@@ -1,0 +1,4 @@
+name: RigidObjSingleDoorCabinetDesk_6
+scene_list:
+- benchmark_eval/SingleDoorCabinetDesk/SingleDoorCabinetDeskSceneFactory_13
+num_tasks: 60

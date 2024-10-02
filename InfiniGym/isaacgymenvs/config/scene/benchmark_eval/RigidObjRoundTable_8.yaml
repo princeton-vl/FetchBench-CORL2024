@@ -1,0 +1,4 @@
+name: RigidObjRoundTable_8
+scene_list:
+- benchmark_eval/RoundTable/RoundTableSceneFactory_33
+num_tasks: 60

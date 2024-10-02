@@ -1,0 +1,4 @@
+name: RigidObjLayerShelf_7
+scene_list:
+- benchmark_eval/LayerShelf/LayerShelfSceneFactory_16
+num_tasks: 60

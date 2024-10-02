@@ -1,0 +1,25 @@
+# used to create the object
+name: FetchPointCloudBase
+
+defaults:
+    - FetchBase
+    - _self_
+
+# if given, will override the device setting in gym. 
+env:
+  enableDebugVis: False
+
+  aggregateMode: 0
+  aggregateBody: 30
+  aggregateShape: 1000
+
+  # set to True if you use camera sensors in the environment
+  enableCameraSensors: True
+
+  cam:
+    num_cam: 2
+    width: 640
+    height: 480
+    hov: 70
+    depth_min: 0.15
+    depth_max: 2.5

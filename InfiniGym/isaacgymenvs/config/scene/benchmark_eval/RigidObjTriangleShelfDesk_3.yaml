@@ -1,0 +1,4 @@
+name: RigidObjTriangleShelfDesk_3
+scene_list:
+- benchmark_eval/TriangleShelfDesk/TriangleShelfDeskSceneFactory_42
+num_tasks: 60
