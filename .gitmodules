@@ -1,0 +1,3 @@
+[submodule "InfiniGym/e2e_imit"]
+	path = InfiniGym/e2e_imit
+	url = https://github.com/princeton-vl/FetchBench-Imit.git
