@@ -5,6 +5,13 @@
 
 This repository contains Isaac-Gym environments for the FetchBench benchmark (https://arxiv.org/abs/2406.11793) .
 
+To clone the project
+
+```
+git clone --recursive git@github.com:princeton-vl/FetchBench-CORL2024.git
+```
+
+
 ## 1. Installation
 
 Please follow the steps below to perform the installation：
