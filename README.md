@@ -11,7 +11,7 @@ Please follow the steps below to perform the installation：
 
 ### Create Virtual Env
 
-We suggest using python3.8 and numpy=1.23.5.
+We suggest using python=3.8 and numpy=1.23.5.
 
 ```
 conda create -n FetchBench python=3.8 numpy=1.23.5
@@ -146,11 +146,11 @@ where ${TYPE} in \{E2E, TwoStage, CuroboCGN\}.
 
 2. We provide reference code to generate infinite expert fetching trajectories in InfiniGym/isaacgymenvs/data_gen.py and InfiniGym/isaacgymenvs/tasks/fetch/fetch_mesh_curobo_datagen.py .
 
-3. We provide reference code to train the imitation learning models in InfiniGym/isaacgymenvs/train_imit.py and InfiniGym/e2e_imit. The code is adapted from Optimus (https://github.com/NVlabs/Optimus?tab=readme-ov-file).
+3. We provide reference code to train the imitation learning models in InfiniGym/isaacgymenvs/train_imit.py. The code submodule (https://github.com/princeton-vl/FetchBench-Imit.git) is adapted from Optimus (https://github.com/NVlabs/Optimus?tab=readme-ov-file) under Nvidia License.
 
 4. We provide reference code to summarize the results of all benchmark tasks in InfiniGym/isaacgymenvs/result.py .
 
-5. We will release the baseline dataset and the well-supported data generation pipeline soon. Please contact us if you would like to have these asap.
+5. We will release the baseline dataset and the data generation pipeline soon. Please contact us if you would like to have these asap.
 
 ## Citing
 
