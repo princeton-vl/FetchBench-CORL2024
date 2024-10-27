@@ -41,13 +41,13 @@ pip install -r requirement.txt
 
 ### Download Assets
 
-Please download environment asset (asset_release.zip) from https://drive.google.com/drive/folders/0AFFm3c3bWvtLUk9PVA?dmr=1&ec=wgc-drive-hero-goto.
+Please download environment asset (asset_release.zip) from https://drive.google.com/file/d/1DJwa6lDaGN5_NhjL7liOBOGBWRJHowyB/view?usp=sharing.
 
 The assets include procedural assets generated from Infinigen (https://github.com/princeton-vl/infinigen) and third-party asset from Acronym dataset (https://github.com/NVlabs/acronym, The dataset is released under CC BY-NC 4.0.).
 
 ### Install Thirdy-party Packages
 
-Download third_party files (3rd_parties.zip) from https://drive.google.com/drive/folders/0AFFm3c3bWvtLUk9PVA?dmr=1&ec=wgc-drive-hero-goto and put it under FetchBench/ . The packages under thirdy_party contain third-party codes from the following sources.
+Download third_party files (3rd_parties.zip) from https://drive.google.com/file/d/1LbtApHYUcOByw5odPebwcUG71J_tolgy/view?usp=sharing and put it under FetchBench/ . The packages under thirdy_party contain third-party codes from the following sources.
 
 #### Install Isaac-Gym
 
@@ -102,7 +102,7 @@ pip install -e .
 
 #### (Optional) Download Imitation Learning Models
 
-If you want to run imitation learning models, please download the checkpoints (imit_ckpts.zip) from https://drive.google.com/drive/folders/0AFFm3c3bWvtLUk9PVA?dmr=1&ec=wgc-drive-hero-goto.
+If you want to run imitation learning models, please download the checkpoints (imit_ckpts.zip) from (https://drive.google.com/file/d/1wN9rDux3xXzcazWpbtYOi0Pe_240eDyu/view?usp=sharing).
 
 #### FAQ:
 
